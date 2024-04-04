@@ -17,9 +17,9 @@ body {
 #navbar {
   overflow: hidden;
   background-color: #ff9dbe;
-  padding: 50px 10px;
+  padding: 30px 10px;
   transition: 0.4s;
-  position: unset;
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 99;
@@ -31,9 +31,9 @@ body {
   float: left;
   color: black;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
-  font-size: 20px; 
+  font-size: 19px; 
   line-height: 11px;
   border-radius: 1px;
   text-decoration: none;
@@ -45,7 +45,7 @@ body {
             list-style: none;
             display: inline-block;
             margin: 0 30px;
-            margin-top: 30px;
+            margin-top: 15px;
 }
 
 #navbar #logo {
@@ -66,11 +66,10 @@ body {
 }
 
 @media screen and (max-width: 580px) {
-  .slideshow-container{
-    
-  }
+ 
   #navbar {
     padding: 20px 10px !important;
+    position: unset;
   }
   #navbar a {
     
@@ -219,7 +218,7 @@ img {vertical-align: middle;}
 
         </style>
     </head>
-    <body>
+    <body oncontextmenu="return false;">
         <div id="navbar">
             <img src="https://i.postimg.cc/4x9DcvNn/asd123asasd.jpg" class="logo">
             <div id="navbar-right">
@@ -228,7 +227,7 @@ img {vertical-align: middle;}
                     <a href="./strands.html">strands</a>
                     <a href="./aboutmda.html">about mda</a>
                     <a href="./administration.html">administration</a>
-                   <a href="">departments</a>
+                    <a href="./schooldepartments.html">School Departments</a>
                 </ul>
             </div>
           </div>
@@ -430,6 +429,24 @@ img {vertical-align: middle;}
             
             
             <script>
+              document.onkeydown = function(e)
+        {
+            if(event.keyCode == 123) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
             let slideIndex = 1;
             showSlides(slideIndex);
             
@@ -485,10 +502,10 @@ function scrollFunction() {
             
             function scrollFunction() {
               if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.getElementById("navbar").style.padding = "30px 10px";
+                document.getElementById("navbar").style.padding = "10px 10px";
                 document.getElementById("logo").style.fontSize = "25px";
               } else {
-                document.getElementById("navbar").style.padding = "80px 10px";
+                document.getElementById("navbar").style.padding = "25px 10px";
                 document.getElementById("logo").style.fontSize = "35px";
               }
             }
